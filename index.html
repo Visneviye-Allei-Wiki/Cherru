@@ -52,6 +52,7 @@
             box-sizing: border-box;
             width: calc(100% - 10px);
             transition: margin-left 0.3s ease;
+            display: flex;
         }
         .sidebar:hover + .main-content {
             margin-left: 250px;
@@ -97,6 +98,7 @@
         }
         .content {
             margin-bottom: 20px;
+            width: 100%; /* Занимаем всю ширину */
         }
         .navigation {
             margin-top: 40px;
@@ -241,6 +243,8 @@
             padding: 20px;
             margin-top: 20px;
             transition: border-color 0.3s, background-color 0.3s;
+            width: 300px; /* Ширина инфобокса */
+            margin-left: 20px; /* Отступ слева */
         }
         .dark-theme .infobox {
             border-color: #ff9cc2;
@@ -276,6 +280,7 @@
             .main-content {
                 margin-left: 0;
                 width: 100%;
+                display: block; /* Убираем flex для мобильных устройств */
             }
             .sidebar:hover + .main-content {
                 margin-left: 0;
@@ -288,6 +293,11 @@
             }
             .header img {
                 max-width: 50%;
+            }
+            .infobox {
+                width: 100%; /* Инфобокс занимает всю ширину на мобильных */
+                margin-left: 0; /* Сбрасываем отступ */
+                margin-top: 20px; /* Отступ сверху */
             }
         }
     </style>
