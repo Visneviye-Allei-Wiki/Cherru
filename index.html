@@ -52,7 +52,6 @@
             box-sizing: border-box;
             width: calc(100% - 10px);
             transition: margin-left 0.3s ease;
-            display: flex;
         }
         .sidebar:hover + .main-content {
             margin-left: 250px;
@@ -98,7 +97,6 @@
         }
         .content {
             margin-bottom: 20px;
-            width: 100%; /* Занимаем всю ширину */
         }
         .navigation {
             margin-top: 40px;
@@ -237,14 +235,23 @@
         .dark-theme .divider {
             border-color: #ff9cc2;
         }
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .main-info {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 20px;
+        }
         .infobox {
+            width: 250px;
             border: 1px solid #d147a3;
             border-radius: 10px;
             padding: 20px;
             margin-top: 20px;
             transition: border-color 0.3s, background-color 0.3s;
-            width: 300px; /* Ширина инфобокса */
-            margin-left: 20px; /* Отступ слева */
         }
         .dark-theme .infobox {
             border-color: #ff9cc2;
@@ -280,7 +287,6 @@
             .main-content {
                 margin-left: 0;
                 width: 100%;
-                display: block; /* Убираем flex для мобильных устройств */
             }
             .sidebar:hover + .main-content {
                 margin-left: 0;
@@ -294,10 +300,15 @@
             .header img {
                 max-width: 50%;
             }
+            .content-wrapper {
+                flex-direction: column;
+            }
             .infobox {
-                width: 100%; /* Инфобокс занимает всю ширину на мобильных */
-                margin-left: 0; /* Сбрасываем отступ */
-                margin-top: 20px; /* Отступ сверху */
+                width: 100%;
+                margin-top: 20px;
+            }
+            .main-info {
+                margin-right: 0;
             }
         }
     </style>
@@ -330,14 +341,16 @@
 
             <div class="divider"></div>
 
-            <main class="content">
-                <h2>Основная информация</h2>
-                <p>Черр (также известная как Cherru) - Бывшая владелец сервера. Имеет заброшенный канал на ютубе (<a href="https://www.youtube.com/@cherru_">cherru</a>), на который выкладывала анимации по сюжетным сезонам <a href="https://youtube.com/@mrlololoshka">Лололошки</a>. Большая часть её активности в дискорде была на <a href="https://visneviye-allei-wiki.github.io/Wiki/">Вишневых Аллеях</a>. Уже достаточно давно Черр удалила свой аккаунт в дискорде, и больше не проявляла активности. Она покинула но вернулась через пол года в фандом <a href="https://youtube.com/@mrlololoshka">Лололошки</a> . Её Телеграм-канал <a href="https://t.me/cherru_alley">Корзинка Вишни</a> заброшена.</p>
-                <p>29 мая 2024 года написала пост в своём <a href="https://t.me/s/cherru_alley">телеграм-канале</a> "ХАЙ ЧАТ!!! (я знаю что чата тут нет лол)".</p>
-                <p>Также она стала выкладывать арты на свой <a href="https://t.me/s/cherru_alley">телеграм-канал</a></p>
-                <p>Также она стала делать анимации на своем <a href="https://www.youtube.com/@cherru_">ютуб-канале</a></p>
+            <div class="content-wrapper">
+                <main class="main-info">
+                    <h2>Основная информация</h2>
+                    <p>Черр (также известная как Cherru) - Бывшая владелец сервера. Имеет заброшенный канал на ютубе (<a href="https://www.youtube.com/@cherru_">cherru</a>), на который выкладывала анимации по сюжетным сезонам <a href="https://youtube.com/@mrlololoshka">Лололошки</a>. Большая часть её активности в дискорде была на <a href="https://visneviye-allei-wiki.github.io/Wiki/">Вишневых Аллеях</a>. Уже достаточно давно Черр удалила свой аккаунт в дискорде, и больше не проявляла активности. Она покинула но вернулась через пол года в фандом <a href="https://youtube.com/@mrlololoshka">Лололошки</a> . Её Телеграм-канал <a href="https://t.me/cherru_alley">Корзинка Вишни</a> заброшена.</p>
+                    <p>29 мая 2024 года написала пост в своём <a href="https://t.me/s/cherru_alley">телеграм-канале</a> "ХАЙ ЧАТ!!! (я знаю что чата тут нет лол)".</p>
+                    <p>Также она стала выкладывать арты на свой <a href="https://t.me/s/cherru_alley">телеграм-канал</a></p>
+                    <p>Также она стала делать анимации на своем <a href="https://www.youtube.com/@cherru_">ютуб-канале</a></p>
+                </main>
 
-                <div class="infobox">
+                <aside class="infobox">
                     <h2>Черр</h2>
                     <img src="images/cherru.png" alt="Черр" class="avatar">
                     <table>
@@ -350,8 +363,8 @@
                             <td>22.03.NA</td>
                         </tr>
                     </table>
-                </div>
-            </main>
+                </aside>
+            </div>
         </div>
     </div>
 
