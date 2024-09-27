@@ -115,6 +115,9 @@
             text-decoration: none;
             border-radius: 5px;
             transition: all 0.3s ease;
+            overflow: hidden; /* Добавлено для скрытия текста за пределами */
+            text-overflow: ellipsis; /* Добавлено для многоточия */
+            white-space: nowrap;
         }
         .light-theme .navigation a {
             background-color: #fff;
@@ -216,7 +219,7 @@
             top: 5px;
             left: 5px;
             z-index: 1001;
-            background-color: #ffb6c1;
+            background-color: rgba(255, 188, 193, 0.8); /* Сделано прозрачным */
             border: none;
             border-radius: 5px;
             padding: 8px 12px;
@@ -224,7 +227,7 @@
             font-size: 20px;
         }
         .dark-theme .mobile-menu-toggle {
-            background-color: #2a2a2a;
+            background-color: rgba(42, 42, 42, 0.8); /* Сделано прозрачным */
             color: #ff9cc2;
         }
         .divider {
@@ -273,7 +276,20 @@
             border-bottom-color: rgba(255, 156, 194, 0.3);
         }
         .light-theme .infobox {
-            background-color: rgba(255, 255, 255, 0.9); /* Добавлено для светлой темы */
+            background-color: rgba(255, 255, 255, 0.9); 
+        }
+        .light-theme .infobox h2 {
+            background-color: #ff9cc2; /* Фон для заголовка в светлой теме */
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #fff; /* Белый цвет текста */
+            margin-bottom: 10px; /* Отступ снизу */
+        }
+        .light-theme .infobox td:first-child {
+            background-color: #ff9cc2; /* Фон для левых ячеек в светлой теме */
+            padding: 5px 10px;
+            color: #fff;
+            border-radius: 5px 0 0 5px;
         }
         @media (max-width: 768px) {
             .sidebar {
@@ -309,7 +325,7 @@
             .infobox {
                 width: 100%;
                 margin-top: 20px;
-                margin-bottom: 20px; /* Добавлено для отступа снизу */
+                margin-bottom: 20px; 
             }
             .main-info {
                 margin-right: 0;
@@ -317,6 +333,9 @@
             }
             .infobox {
                 order: 1; 
+            }
+            .infobox {
+                margin-right: 0; /* Убираем отступ справа на мобильных */
             }
         }
     </style>
@@ -351,7 +370,7 @@
             <div class="content-wrapper">
                 <main class="main-info">
                     <h2>Основная информация</h2>
-                    <p>Черр (также известная как Cherru или же Твинкл) - Бывшая владелец сервера. Имеет заброшенный канал на ютубе (<a href="https://www.youtube.com/@cherru_">cherru</a>), на который выкладывала анимации по сюжетным сезонам <a href="https://youtube.com/@mrlololoshka">Лололошки</a>. Большая часть её активности в дискорде была на <a href="https://visneviye-allei-wiki.github.io/Wiki/">Вишневых Аллеях</a>. Уже достаточно давно Черр удалила свой аккаунт в дискорде, и больше не проявляла активности. Она покинула но вернулась через пол года в фандом <a href="https://youtube.com/@mrlololoshka">Лололошки</a>.</p>
+                    <p>Черр (также известная как Cherru или Твикнл) - Бывшая владелец сервера. Имеет заброшенный канал на ютубе (<a href="https://www.youtube.com/@cherru_">cherru</a>), на который выкладывала анимации по сюжетным сезонам <a href="https://youtube.com/@mrlololoshka">Лололошки</a>. Большая часть её активности в дискорде была на <a href="https://visneviye-allei-wiki.github.io/Wiki/">Вишневых Аллеях</a>. Уже достаточно давно Черр удалила свой аккаунт в дискорде, и больше не проявляла активности. Она покинула но вернулась через пол года в фандом <a href="https://youtube.com/@mrlololoshka">Лололошки</a>.
                     <p>29 мая 2024 года написала пост в своём <a href="https://t.me/s/cherru_alley">телеграм-канале</a> "ХАЙ ЧАТ!!! (я знаю что чата тут нет лол)".</p>
                     <p>Также она стала выкладывать арты на свой <a href="https://t.me/s/cherru_alley">телеграм-канал</a></p>
                     <p>Также она стала делать анимации на своем <a href="https://www.youtube.com/@cherru_">ютуб-канале</a></p>
@@ -363,7 +382,7 @@
                     <table>
                         <tr>
                             <td>Должность</td>
-                            <td>Бывшая владелец</td>
+                            <td>Бывшая владелеца</td>
                         </tr>
                         <tr>
                             <td>Дата рождения</td>
