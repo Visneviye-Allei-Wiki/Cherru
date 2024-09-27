@@ -334,13 +334,19 @@
                 margin-right: 0; 
             }
             .main-info, .infobox {
-                width: 100%; /* Занимаем всю ширину на мобильных */
-                box-sizing: border-box; /* Включаем padding в ширину */
+                width: 100%;
+                box-sizing: border-box;
             }
             .main-info p {
                 overflow: hidden; 
                 text-overflow: ellipsis; 
                 white-space: nowrap;
+            }
+            .infobox p {
+                overflow-wrap: break-word; /* Разрешаем перенос слов */
+            }
+            .infobox td {
+                overflow-wrap: break-word; /* Разрешаем перенос слов */
             }
         }
     </style>
